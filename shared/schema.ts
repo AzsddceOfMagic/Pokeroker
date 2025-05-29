@@ -95,7 +95,7 @@ export const userProgress = pgTable("user_progress", {
   gtoAccuracy: decimal("gto_accuracy", { precision: 5, scale: 2 }).default("0"),
   icmScore: decimal("icm_score", { precision: 5, scale: 2 }).default("0"),
   totalHandsPlayed: integer("total_hands_played").default(0),
-  winRate: decimal("win_rate", { precision: 5, 2 }).default("0"),
+  winRate: decimal("win_rate", { precision: 5, scale: 2 }).default("0"),
   preflopAccuracy: decimal("preflop_accuracy", { precision: 5, scale: 2 }).default("0"),
   postflopAccuracy: decimal("postflop_accuracy", { precision: 5, scale: 2 }).default("0"),
   bettingSizeAccuracy: decimal("betting_size_accuracy", { precision: 5, scale: 2 }).default("0"),
