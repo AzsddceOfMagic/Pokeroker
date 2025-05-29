@@ -1,0 +1,125 @@
+Create a fully functional, competitive poker training platform for No-Limit Hold’em, comparable to GTO Wizard, with a robust backend to handle user authentication, data storage, and real-time interactions. The platform requires user signup and login, offering interactive GTO and ICM training, AI bot practice implemented in Node.js, a demo balance system, and GitHub deployment. The site must be responsive, scalable, secure, and feature-rich to match industry-leading poker training platforms.
+
+Core Features:
+
+
+
+
+
+User Authentication: Users must sign up with email/password or OAuth (e.g., Google) and log in to access all features. Store user data securely in a MongoDB database with JWT-based authentication.
+
+
+
+GTO Training Module: Provide a comprehensive library of pre-solved GTO scenarios for 6-max, 9-max cash games, heads-up Sit & Go, and Spin & Go formats, covering preflop and postflop play. Include interactive drills with real-time feedback on actions (fold, call, raise, bet sizing), showing Expected Value (EV) analysis and range balance insights. Display hand range and equity distribution graphs. Allow custom scenario inputs (stack sizes, positions, bet sizes) for tailored GTO solutions.
+
+
+
+ICM Training Module: Offer pre-built ICM scenarios for multi-table tournaments (MTTs), Sit & Go, and Progressive Knockout (PKO) formats, focusing on key stages (bubble, final table, short-stack). Support custom tournament parameter inputs (stack sizes, blind levels, payout structures) to calculate optimal push/fold ranges and postflop strategies. Provide feedback on tournament equity impact and optimal actions, with a library of 10,000+ final table scenarios. Include chip equity vs. monetary value visualizations.
+
+
+
+Practice Bots: Implement Node.js-based AI bots for GTO and ICM play, with beginner, intermediate, and advanced difficulty levels. Allow customization of bot tendencies (tight, aggressive, exploitative) to simulate varied opponents. Provide post-session hand history analysis with GTO/ICM deviation highlights, EV charts, and improvement suggestions. Bots adapt to cash games and tournaments, using precomputed strategy tables.
+
+
+
+Demo Balance System: Grant 1,000 virtual credits (non-purchasable, non-redeemable) upon signup to unlock premium features: GTO drills (50 credits each), custom ICM scenarios (100 credits each), bot practice (25 credits per 10 hands). Regenerate 100 credits daily, up to a 1,000-credit cap. Prompt users to subscribe when credits are low, linking to a pricing page (e.g., “/subscribe”).
+
+
+
+Additional Features: Include video tutorials and webinars from professional poker players on GTO/ICM concepts. Allow hand history uploads for GTO/ICM analysis. Support private practice tables (up to 9 players) with customizable settings, no real money. Provide a progress tracking dashboard with metrics (GTO accuracy, ICM decision quality, bot win rate) and a community forum/chat for strategy discussions.
+
+User Interface:
+
+
+
+
+
+Layout: Dark-themed, poker-table-inspired design with a header (logo, navigation: Home, GTO Trainer, ICM Trainer, Bot Practice, Coaching, Community, demo balance, profile/login), interactive poker table for drills/bots, sidebar for analysis (EV, ranges, feedback), and footer (privacy, terms, contact).
+
+
+
+Visuals: Use green/white accents, smooth animations for card dealing/chip movements, and clear fonts (e.g., Roboto, Noto Sans).
+
+
+
+Accessibility: Support keyboard navigation, screen readers, high-contrast colors, and tooltips for terms (e.g., “ICM: Converts chip stacks to tournament equity”).
+
+
+
+Bot Interface: Include a bot selection screen (game type, player count, difficulty, strategy, aggression) and real-time bot action display (e.g., “Bot 1 raises to 100”).
+
+
+
+Demo Balance UI: Show credit balance in header with progress bar (e.g., “750/1,000 credits”), confirmation modals for credit spending, and low-balance warnings with subscription prompts.
+
+Technical Requirements:
+
+
+
+
+
+Frontend: Build with React.js, JSX, and Tailwind CSS, using CDN-hosted dependencies (e.g., React from cdn.jsdelivr.net). Ensure mobile responsiveness.
+
+
+
+Backend: Use Node.js/Express with MongoDB for user data, hand histories, and progress. Implement a simplified poker solver or integrate with GTO+ for real-time GTO/ICM calculations. Use WebSocket for bot and multiplayer interactions. Scale to support 10,000 concurrent users.
+
+
+
+Bot Development: Build bots in Node.js using node-poker (game logic), poker-evaluator (hand strength), and porker-icm (tournament play). Store precomputed GTO/ICM tables in JSON/MongoDB for asynchronous decisions. Adjust difficulty via aggression and table complexity.
+
+
+
+Security: Use JWT/OAuth authentication, HTTPS, and server-side bot/solver logic to prevent cheating. Encrypt sensitive data (e.g., hand histories).
+
+
+
+Performance: Optimize solver for seconds-fast results, cache pre-solved solutions, and minimize server load.
+
+GitHub Deployment:
+
+
+
+
+
+Create a GitHub repository (poker-training-platform) with /client (React), /server (Node.js), /docs (documentation), /scripts (deployment), /tests (tests), README.md, and .gitignore (Node.js/React template).
+
+
+
+Use main branch for production, feature branches for development, and pull requests for reviews.
+
+
+
+Deploy frontend to GitHub Pages using gh-pages package (build with npm run build, deploy with npm run deploy). Set homepage in package.json.
+
+
+
+Deploy backend to Heroku/Render/AWS, configuring environment variables (MongoDB URI, JWT secret) in the platform’s dashboard.
+
+
+
+Set up GitHub Actions for CI (tests, deployment) with Node.js 16, installing dependencies and running tests for /client and /server.
+
+
+
+Maintain repository by updating dependencies, monitoring issues, and archiving old branches.
+
+Additional Notes:
+
+
+
+
+
+Ensure compliance with online poker regulations by emphasizing training, not real-money gambling.
+
+
+
+Support future enhancements like mobile apps and Pot-Limit Omaha.
+
+
+
+Include a feedback form for user suggestions.
+
+
+
+Deliver a complete, production-ready site with all features, responsive design (Chrome, Firefox, Safari, mobile), 10 pre-built GTO/ICM drills, documented bots, and a user guide with beginner tutorials.
